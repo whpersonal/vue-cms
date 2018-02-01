@@ -12,6 +12,17 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://39.106.32.91:3000'
 Vue.prototype.$http = axios
 
+// 缩略图
+import VuePreview from 'vue2-preview'
+Vue.use(VuePreview)
+
+
+// 时间过滤器
+import moment from 'moment'
+Vue.filter('dataFormat',function(val){
+  return moment(val).format('YYYY-MM-DD HH:mm:ss')
+})
+
 
 
 

@@ -90,10 +90,16 @@
        }
     }
 </script>
-<style >
+<style lang="scss" scoped>
+
+ 
   .app-container{
       padding-top: 40px;
+      padding-bottom: 50px;
       overflow: hidden;
+    .mint-header {
+         z-index: 99;
+      }
   }
   /* 控制组建切换动画效果 */
   .v-enter{
@@ -108,6 +114,9 @@
   .v-enter-active,
   .v-leave-active{
       transition: all 0.4s ease;
+  }
+  mt-header{
+      z-index: 1000;
   }
 
 </style>
