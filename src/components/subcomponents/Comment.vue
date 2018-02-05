@@ -43,11 +43,12 @@ export default {
       )
       if(data.status===0){
           if (data.message.length <= 0) {
-                            Toast('已经到底了')
+              Toast('已经到底了')
               return (this.isover = true);
 
           }
           this.commentList = this.commentList.concat(data.message)
+          // this.commentList = [...data.message]
       }
     //   console.log(this.commentList);
     },

@@ -11,6 +11,10 @@ import NewsList from './components/news/NewsList.vue'
 import NewsInfo from './components/news/NewsInfo.vue'
 import PhotoList from './components/photo/PhotoList.vue'
 import PhotoInfo from './components/photo/PhotoInfo.vue'
+import GoodsList from './components/goods/GoodsList.vue'
+import GoodsInfo from './components/goods/GoodsInfo.vue'
+import GoodsCmt from  './components/goods/GoodsCmt.vue'
+import GoodsDesc from './components/goods/GoodsDesc.vue'
 
 
 const router = new VueRouter({
@@ -22,8 +26,12 @@ const router = new VueRouter({
       { path: '/search', component: SearchContainer },
       { path: '/home/newslist', component: NewsList },
       { path: '/home/newsinfo/:id', component: NewsInfo,props:true},
-      { path: '/home/phptolist', component: PhotoList },
-      { path: '/home/photoinfo/:id', component: PhotoInfo,props:true}
+      { path: '/home/photolist', component: PhotoList },
+      { path: '/home/photoinfo/:id', component: PhotoInfo,props:true},
+      { path: '/home/goodslist/', component: GoodsList},
+      { path: '/home/goodsinfo/:id', component: GoodsInfo,props:true},
+      { path: '/home/goodscmt/:id', component: GoodsCmt, props: true },
+      { path: '/home/goodsdesc/:id', component: GoodsDesc, props: true }
     ],
     linkActiveClass: 'mui-active' // 设置路由高亮的类名
   })

@@ -1,11 +1,7 @@
 <template>
   <div>
     <!-- 轮播图 -->
-    <mt-swipe :auto="3000">
-      <mt-swipe-item v-for="item in lunboList" :key="item.img">
-        <img :src="item.img">
-      </mt-swipe-item>
-    </mt-swipe>
+   <swiper :url="'/api/getlunbo'" :imagename="'img'"  :isfull="true"></swiper>
     <!-- 九宫格 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <router-link to="/home/newslist">
@@ -16,7 +12,7 @@
           </a>
         </li>
       </router-link>
-      <router-link to="/home/phptolist">
+      <router-link to="/home/photolist">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">
                 <img src="../../images/menu2.png" alt="">
@@ -24,7 +20,7 @@
           </a>
         </li>
       </router-link>
-      <router-link to="">
+      <router-link to="/home/goodslist">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">
                 <img src="../../images/menu3.png" alt="">
@@ -63,36 +59,15 @@
 </template>
 
 <script>
+import swiper from '../subcomponents/Swiper.vue'
 export default {
-  data() {
-    return {
-      lunboList: []
-    };
-  },
-  created() {
-    this.getLunbo();
-  },
-  methods: {
-    async getLunbo() {
-      const { data } = await this.$http.get("/api/getlunbo");
-      if (data.status === 0) {
-        this.lunboList = data.message;
-      }
-    }
+  components:{
+    swiper
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.mint-swipe {
-  height: 180px;
-}
-.mint-swipe-item {
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
 .mui-table-view {
   img {
     width: 60px;
